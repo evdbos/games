@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   Image,
-  Text,
   Spinner,
   Button,
 } from "@chakra-ui/react";
