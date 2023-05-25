@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import genres from "../data/genres";
 import ApiClient, { FetchResponse } from "../services/api-client";
 
-const apiClient = new ApiClient<Genre>("/platforms/lists/parents");
+const apiClient = new ApiClient<Genre>("/genres");
 
 export interface Genre {
   id: number;
