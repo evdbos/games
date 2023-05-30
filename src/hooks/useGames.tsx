@@ -5,6 +5,7 @@ import useGameQueryStore from "../store";
 import { Platform } from "./usePlatforms";
 
 const apiClient = new ApiClient<Game>("/games");
+
 export interface Game {
   id: number;
   name: string;
@@ -12,6 +13,8 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  slug: string;
+  description_raw: string;
 }
 
 const useGames = () => {
