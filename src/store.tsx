@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { GameQuery } from "./entities/GameQuery";
 
 interface GameQueryStore {
-  GameQuery: GameQuery;
+  gameQuery: GameQuery;
   setSearchText: (searchText: string) => void;
   setGenreId: (genreId: number) => void;
   setPlatformId: (platformId: number) => void;
@@ -10,14 +10,14 @@ interface GameQueryStore {
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
-  GameQuery: {},
-  setSearchText: (searchText) => set(() => ({ GameQuery: { searchText } })),
+  gameQuery: {},
+  setSearchText: (searchText) => set(() => ({ gameQuery: { searchText } })),
   setGenreId: (genreId) =>
-    set((store) => ({ GameQuery: { ...store.GameQuery, genreId } })),
+    set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
   setPlatformId: (platformId) =>
-    set((store) => ({ GameQuery: { ...store.GameQuery, platformId } })),
+    set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
   setSortOrder: (sortOrder) =>
-    set((store) => ({ GameQuery: { ...store.GameQuery, sortOrder } })),
+    set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
 }));
 
 export default useGameQueryStore;

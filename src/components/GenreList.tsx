@@ -14,7 +14,7 @@ import useGameQueryStore from "../store";
 
 const GenreList = () => {
   const { data, isLoading, error } = UseGenres();
-  const selectedGenreId = useGameQueryStore((s) => s.GameQuery.genreId);
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;

@@ -7,7 +7,7 @@ import { Game } from "../entities/Game";
 const apiClient = new ApiClient<Game>("/games");
 
 const useGames = () => {
-  const gameQuery = useGameQueryStore((s) => s.GameQuery);
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ["games", gameQuery],
     queryFn: ({ pageParam = 1 }) =>
@@ -16,6 +16,7 @@ const useGames = () => {
           genres: gameQuery.genreId,
           parent_platforms: gameQuery.platformId,
           ordering: gameQuery.sortOrder,
+          search: gameQuery.searchText,
           page: pageParam,
         },
       }),
