@@ -6,8 +6,6 @@ interface Props {
 
 const GameTrailer = ({ gameId }: Props) => {
   const { data, isLoading, error } = useGameTrailer(gameId);
-  console.log(gameId);
-  console.log(data?.results);
 
   if (isLoading) {
     return null;

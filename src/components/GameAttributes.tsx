@@ -3,6 +3,8 @@ import Game from "./../entities/Game";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import CriticScore from "./CriticScore";
 import DefinitionItem from "./DefinitionItem";
+import GameSellingStores from "./GameSellingStores";
+import GameAchievement from "./GameAchievement";
 
 interface Props {
   game: Game;
@@ -27,6 +29,12 @@ const GameAttributes = ({ game }: Props) => {
         {game.publishers?.map((publisher) => (
           <Text key={publisher.id}>{publisher.name}</Text>
         ))}
+      </DefinitionItem>
+      <DefinitionItem term="Selling points">
+        <GameSellingStores gameId={game.id} />
+      </DefinitionItem>
+      <DefinitionItem term="Game achievements">
+        <GameAchievement gameId={game.id} />
       </DefinitionItem>
     </SimpleGrid>
   );
